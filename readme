@@ -1,1 +1,33 @@
-# NetPulse  **NetPulse** is a web-based network speed test and diagnostics suite built with React, TypeScript, Tailwind CSS, and Express. It runs three dedicated benchmarks directly from your browser—**Overall WiFi Speed**, **BDIX Speed**, and **CDN Speed**—alongside detailed latency, bufferbloat, and workload readiness analysis.  ## Features  - **
+# NetPulse
+
+**NetPulse** is a web-based network speed test and diagnostics suite built with React, TypeScript, Tailwind CSS, and Express. It runs three dedicated benchmarks directly from your browser—**Overall WiFi Speed**, **BDIX Speed**, and **CDN Speed**—alongside detailed latency, bufferbloat, and workload readiness analysis.
+
+## Features
+
+- **1. Overall WiFi Speed**
+  - Multi-stream HTTP download and concurrent `XMLHttpRequest` upload benchmarks via Cloudflare Edge or the built-in Express streaming server (`/api/speed/*`) with automatic fallback.
+  - Real-time 60fps arc gauge and smoothed multi-stream throughput stability waveform.
+  - Idle latency percentiles (`Min`, `Median`, `Avg`, `p95`, `p99`), RFC 3550 jitter, packet loss, and concurrent loaded latency (**Bufferbloat grades `A+`–`F`**).
+
+- **2. BDIX Speed & Peering Diagnostics**
+  - Multi-stream bandwidth measurement against CORS-enabled domestic BDIX endpoints (including Link3 and user-added BDIX mirrors).
+  - Direct client-to-node RTT sampling across Bangladesh Internet Exchange and local ISP origins (`bdix.net`, `link3.net`, `amberit.com.bd`, `bdcom.com`, `dhakacom.com`, `icc.com.bd`, `samonline.com.bd`, `bdren.net.bd`) to detect local peering vs. international transit hairpinning.
+  - Custom BDIX node support for testing local ISP mirrors.
+
+- **3. CDN Edge Matrix**
+  - Measures real payload delivery speed (Mbps), median RTT, jitter, and edge PoP hints across Cloudflare, jsDelivr, cdnjs, unpkg, Google Edge, and the App Cloud Edge.
+
+- **Detailed Analysis & Export**
+  - Automatic bottleneck identification and workload readiness checks (4K UHD streaming, competitive gaming, HD video conferencing, cloud/package sync, and BDIX local peering).
+  - Persistent local test history with one-click run inspection and full **CSV / JSON** diagnostic exports.
+
+## Tech Stack
+
+- **Frontend:** React 19, TypeScript, Tailwind CSS v4, Motion, Lucide Icons
+- **Backend:** Node.js, Express, Vite
+
+## Getting Started
+
+```bash
+npm install
+npm run dev
