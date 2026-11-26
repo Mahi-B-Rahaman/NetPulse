@@ -1,0 +1,6 @@
+{
+  "name": "NetPulse",
+  "description": "Precision internet speed test and network diagnostics suite for WiFi throughput, BDIX peering, CDN edge performance, and bufferbloat analysis.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

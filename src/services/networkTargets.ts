@@ -1,0 +1,112 @@
+import type { BdixNodeTarget, CdnNodeTarget } from '../types/network';
+
+export const DEFAULT_BDIX_TARGETS: BdixNodeTarget[] = [
+  {
+    id: 'link3',
+    name: 'Link3 Core Bandwidth Node',
+    operator: 'Link3 Technologies (CORS Speed)',
+    url: 'https://www.link3.net/',
+    region: 'Dhaka IX',
+    supportsCorsThroughput: true,
+  },
+  {
+    id: 'bdix-root',
+    name: 'BDIX Core Exchange',
+    operator: 'Bangladesh Internet Exchange',
+    url: 'https://bdix.net/',
+    region: 'Dhaka IX',
+  },
+  {
+    id: 'amberit',
+    name: 'AmberIT Core Network',
+    operator: 'Amber IT Ltd',
+    url: 'https://www.amberit.com.bd/',
+    region: 'Dhaka',
+  },
+  {
+    id: 'bdcom',
+    name: 'BDCOM Online IX',
+    operator: 'BDCOM Online Ltd',
+    url: 'https://www.bdcom.com/',
+    region: 'Dhaka',
+  },
+  {
+    id: 'dhakacom',
+    name: 'DhakaCom Core',
+    operator: 'DhakaCom Ltd',
+    url: 'https://www.dhakacom.com/',
+    region: 'Dhaka',
+  },
+  {
+    id: 'icc',
+    name: 'ICC Communication',
+    operator: 'ICC Peering Node',
+    url: 'https://www.icc.com.bd/',
+    region: 'Dhaka',
+  },
+  {
+    id: 'samonline',
+    name: 'SamOnline Core',
+    operator: 'SamOnline ISP',
+    url: 'https://www.samonline.com.bd/',
+    region: 'Dhaka',
+  },
+  {
+    id: 'bdren',
+    name: 'BdREN Academic IX',
+    operator: 'UGC / BdREN',
+    url: 'https://www.bdren.net.bd/',
+    region: 'Dhaka / National',
+  },
+];
+
+export const DEFAULT_CDN_TARGETS: CdnNodeTarget[] = [
+  {
+    id: 'cloudflare-edge',
+    provider: 'Cloudflare',
+    edgeLabel: 'Anycast Speed Edge',
+    probeUrl: 'https://speed.cloudflare.com/__down?bytes=1500000',
+    pingUrl: 'https://speed.cloudflare.com/__down?bytes=0',
+    expectedBytes: 1500000,
+  },
+  {
+    id: 'jsdelivr-multi',
+    provider: 'jsDelivr',
+    edgeLabel: 'Multi-CDN (Cloudflare + Fastly)',
+    probeUrl: 'https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.min.js',
+    pingUrl: 'https://cdn.jsdelivr.net/npm/three@0.170.0/package.json',
+    expectedBytes: 685000,
+  },
+  {
+    id: 'cdnjs-cf',
+    provider: 'cdnjs',
+    edgeLabel: 'Cloudflare Asset Cache',
+    probeUrl: 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.4.168/pdf.min.mjs',
+    pingUrl: 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js',
+    expectedBytes: 310000,
+  },
+  {
+    id: 'unpkg-edge',
+    provider: 'unpkg',
+    edgeLabel: 'Cloudflare Workers Edge',
+    probeUrl: 'https://unpkg.com/three@0.170.0/build/three.module.min.js',
+    pingUrl: 'https://unpkg.com/react@19.0.0/package.json',
+    expectedBytes: 685000,
+  },
+  {
+    id: 'google-hosted',
+    provider: 'Google Edge',
+    edgeLabel: 'Google Global Cache (GGC)',
+    probeUrl: 'https://ajax.googleapis.com/ajax/libs/threejs/r84/three.min.js',
+    pingUrl: 'https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js',
+    expectedBytes: 510000,
+  },
+  {
+    id: 'app-host-edge',
+    provider: 'App Cloud Edge',
+    edgeLabel: 'Origin Server Direct Stream',
+    probeUrl: '/api/speed/down?bytes=1500000',
+    pingUrl: '/api/speed/ping',
+    expectedBytes: 1500000,
+  },
+];
