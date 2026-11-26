@@ -1,0 +1,1 @@
+# NetPulse  **NetPulse** is a web-based network speed test and diagnostics suite built with React, TypeScript, Tailwind CSS, and Express. It runs three dedicated benchmarks directly from your browser—**Overall WiFi Speed**, **BDIX Speed**, and **CDN Speed**—alongside detailed latency, bufferbloat, and workload readiness analysis.  ## Features  - **
